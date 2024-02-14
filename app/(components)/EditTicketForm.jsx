@@ -88,6 +88,7 @@ const EditTicketForm = ({ ticket }) => {
           onChange={handleChange}
           required={true}
           value={formData.title}
+          class="border border-gray-400 p-2"
         />
         <label>Description</label>
         <textarea
@@ -97,12 +98,14 @@ const EditTicketForm = ({ ticket }) => {
           required={true}
           value={formData.description}
           rows="5"
+          class="border border-gray-400 p-2"
         />
         <label>Category</label>
         <select
           name="category"
           value={formData.category}
           onChange={handleChange}
+          class="border border-gray-400 p-2"
         >
           {categories?.map((category, _index) => (
             <option key={_index} value={category}>
@@ -112,7 +115,7 @@ const EditTicketForm = ({ ticket }) => {
         </select>
 
         <label>Priority</label>
-        <div>
+        <div class="border border-gray-400 p-2">
           <input
             id="priority-1"
             name="priority"
@@ -170,14 +173,19 @@ const EditTicketForm = ({ ticket }) => {
           onChange={handleChange}
         />
         <label>Status</label>
-        <select name="status" value={formData.status} onChange={handleChange}>
+        <select
+          name="status"
+          value={formData.status}
+          onChange={handleChange}
+          class="border border-gray-400 p-2"
+        >
           <option value="not started">Not Started</option>
           <option value="started">Started</option>
           <option value="done">Done</option>
         </select>
         <input
           type="submit"
-          className="btn max-w-xs"
+          className="btn max-w-xs text-[#FFFFFF]"
           value={EDITMODE ? "Update Ticket" : "Create Ticket"}
         />
       </form>
